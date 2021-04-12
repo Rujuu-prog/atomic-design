@@ -1,2 +1,2 @@
 # atomic-design
-Created with CodeSandbox
+Practice atomic-design with React.
