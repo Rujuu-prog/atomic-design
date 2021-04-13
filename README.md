@@ -1,2 +1,3 @@
 # atomic-design
-Practice atomic-design with React.
+
+Practice Atomic-design
