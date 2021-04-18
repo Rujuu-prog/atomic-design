@@ -19,17 +19,13 @@ const users = [...Array(10).keys()].map((val) => {
 });
 
 export const Users = () => {
-  const { state } = useLocation();
-  // stateが存在していればstate.isadmin、存在していなければfalse
-  const isAdmin = state ? state.isAdmin : false;
-  console.log(state);
   return (
     <SContainer>
       <h2>ユーザー一覧</h2>
       <SearchInput />
       <SUserArea>
         {users.map((user) => (
-          <UserCard keys={user.id} user={user} isAdmin={isAdmin} />
+          <UserCard keys={user.id} user={user} />
         ))}
       </SUserArea>
     </SContainer>

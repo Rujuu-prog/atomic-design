@@ -1,7 +1,15 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import { UserContext } from "../../providers/UserProvider";
 
 export const UserIconWithName = (props) => {
-  const { image, name, isAdmin } = props;
+  const { image, name } = props;
+  //どのcontextかを引数に
+  const { userInfo } = useContext(UserContext);
+  //userInfoが存在していればuserInfo.isAdmin、存在していなければfalse
+  const isAdmin = userInfo ? userInfo.isAdmin : false;
+  console.log(userInfo);
+
   return (
     <SContainer>
       <img height={160} width={160} src={image} alt={name} />
