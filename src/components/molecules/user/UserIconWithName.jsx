@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const UserIconWithName = (props) => {
-  const { image, name } = props;
+  const { image, name, isAdmin } = props;
   return (
     <SContainer>
       <img height={160} width={160} src={image} alt={name} />
       <p>{name}</p>
+      {isAdmin && <SEdit>編集</SEdit>}
     </SContainer>
   );
 };
@@ -21,4 +22,9 @@ const SContainer = styled.div`
     margin: 0;
     color: #40514e;
   }
+`;
+const SEdit = styled.span`
+  text-decoration: underline;
+  color: #aaa;
+  cursor: pointer;
 `;
